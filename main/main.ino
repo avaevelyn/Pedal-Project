@@ -30,6 +30,7 @@ void setup() {
   pinMode(PUSHBUTTON_1, INPUT_PULLUP);
   pinMode(PUSHBUTTON_2, INPUT_PULLUP);
   pinMode(LED, OUTPUT);
+  Serial.begin(9600);
  
   // setup ADC
   ADMUX = 0x60; // left adjust, adc0, internal vcc
@@ -68,11 +69,13 @@ if(counter==1000)
 { 
 counter=0;
 if (!digitalRead(PUSHBUTTON_2)) {
+  Serial.println("button 2 has been pushed");
   if (distortion_threshold<32768)distortion_threshold=distortion_threshold+25; //increase the vol
     digitalWrite(LED, LOW); //blinks the led
     }
  
     if (!digitalRead(PUSHBUTTON_1)) {
+        Serial.println("button 1 has been pushed");
   if (distortion_threshold>0)distortion_threshold=distortion_threshold-25; //decrease vol
   digitalWrite(LED, LOW); //blinks the led
     }
