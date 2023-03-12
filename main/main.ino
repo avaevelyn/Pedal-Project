@@ -2,7 +2,7 @@
 // Based on OpenMusicLabs previous works.
 // pedalshield_uno_fuzz.ino reads the ADC signal and boost it to the max or min value depending on a threshold value
 // pressing the pushbutton_1 or 2 turns the fuzz distortion harder or softer.
-// Made by Ava
+// Made by Ava Horwood
  
  
 //defining harware resources.
